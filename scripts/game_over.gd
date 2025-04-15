@@ -4,7 +4,9 @@ extends Control
 
 
 func _ready() -> void:
-	$CenterContainer/VBoxContainer/Label2.text = $CenterContainer/VBoxContainer/Label2.text + str(Global.score)
+	$CenterContainer/VBoxContainer/TimeLabel.text = $CenterContainer/VBoxContainer/TimeLabel.text + str(Global.play_time) + " seconds"
+	$CenterContainer/VBoxContainer/MeteorLabel.text = $CenterContainer/VBoxContainer/MeteorLabel.text + str(Global.meteors_destroyed)
+	$CenterContainer/VBoxContainer/ScoreLabel.text = $CenterContainer/VBoxContainer/ScoreLabel.text + str(Global.score)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

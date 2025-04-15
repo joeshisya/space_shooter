@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 static var image = load('res://graphics/lives/Player Life.png')
-var time_elapsed := 0
 
 
 func set_health(amount):
@@ -16,6 +15,8 @@ func set_health(amount):
 
 
 func _on_score_timer_timeout() -> void:
-	time_elapsed += 1
+	Global.play_time += 1
 	Global.score += 1
-	$MarginContainer/Label.text = str(Global.score)
+	$MarginContainer/HBoxContainer/PlayTimeLabel.text = "Play Time: " + str(Global.play_time) + " Seconds"
+	$MarginContainer/HBoxContainer/MeteorsLabel.text = "Meteors Destroyed: " + str(Global.meteors_destroyed)
+	$MarginContainer/HBoxContainer/ScoreLabel.text = "Score: " + str(Global.score)
