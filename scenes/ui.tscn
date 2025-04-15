@@ -16,11 +16,36 @@ offset_bottom = 57.0
 grow_horizontal = 2
 theme_override_constants/margin_top = 20
 
-[node name="Label" type="Label" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="PlayTimeLabel" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_0481g")
-theme_override_font_sizes/font_size = 50
-text = "0"
+theme_override_font_sizes/font_size = 30
+text = "Play Time: 0 seconds "
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MeteorsLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0481g")
+theme_override_font_sizes/font_size = 30
+text = "Meteors Destroyed: 0"
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0481g")
+theme_override_font_sizes/font_size = 30
+text = "Score: 0"
 horizontal_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]

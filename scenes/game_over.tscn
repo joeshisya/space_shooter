@@ -42,17 +42,25 @@ text = "GAME OVER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer"]
+[node name="TimeLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gu4vm")
+theme_override_font_sizes/font_size = 32
+text = "Play Time: "
+horizontal_alignment = 1
+
+[node name="MeteorLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gu4vm")
+theme_override_font_sizes/font_size = 32
+text = "METEORS DESTROYED: "
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_gu4vm")
 theme_override_font_sizes/font_size = 32
 text = "Score: "
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_gu4vm")
-theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
