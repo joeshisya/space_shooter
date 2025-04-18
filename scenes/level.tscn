@@ -58,20 +58,30 @@ collision_layer = 4
 position = Vector2(640, 740)
 shape = SubResource("RectangleShape2D_g0xuk")
 
-[node name="MeteorTimer" type="Timer" parent="."]
-wait_time = 0.5
-autostart = true
-
 [node name="Meteors" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
 [node name="Lasers" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
+[node name="Powerups" type="Node2D" parent="."]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ubtaa")
 
 [node name="UI" parent="." instance=ExtResource("4_f31ts")]
 
+[node name="Timers" type="Node2D" parent="."]
+
+[node name="MeteorTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+autostart = true
+
+[node name="ShieldTimer" type="Timer" parent="Timers"]
+
+[node name="RapidFireTimer" type="Timer" parent="Timers"]
+
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
-[connection signal="timeout" from="MeteorTimer" to="." method="_on_meteor_timer_timeout"]
+[connection signal="timeout" from="Timers/MeteorTimer" to="." method="_on_meteor_timer_timeout"]
+[connection signal="timeout" from="Timers/ShieldTimer" to="." method="_on_shield_timer_timeout"]
+[connection signal="timeout" from="Timers/RapidFireTimer" to="." method="_on_rapid_fire_timer_timeout"]
